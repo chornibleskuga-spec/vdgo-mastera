@@ -1,0 +1,4 @@
+var CACHE_NAME='vdgo-master-v1';var STATIC_ASSETS=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png'];
+self.addEventListener('install',function(e){e.waitUntil(caches.open(CACHE_NAME).then(function(c){return c.addAll(STATIC_ASSETS);}).then(function(){self.skipWaiting();}));});
+self.addEventListener('activate',function(e){e.waitUntil(caches.keys().then(function(n){return Promise.all(n.filter(function(n){return n!==CACHE_NAME;}).map(function(n){return caches.delete(n);}));}).then(function(){self.clients.claim();}));});
+self.addEventListener('fetch',function(e){var r=e.request;if(r.mode==='navigate'){e.respondWith(fetch(r).catch(function(){return caches.match('./index.html');}));return;}e.respondWith(caches.match(r).then(function(c){if(c)return c;return fetch(r).then(function(r){if(!r||r.status!==200||r.method!=='GET')return r;var c=r.clone();caches.open(CACHE_NAME).then(function(cache){cache.put(r,c);});return r;});}));});
