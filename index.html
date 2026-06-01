@@ -15,19 +15,19 @@
     <meta name="msapplication-tap-highlight" content="no" />
 
     <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="./manifest.json" />
 
     <!-- Icons -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
 
     <title>ВДГО Мастер</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js" onerror="var s=document.createElement('script');s.src='./peerjs.min.js';document.head.appendChild(s);"></script>
-    <script type="module" crossorigin src="/assets/index-CvWeeWTo.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-0QIUcxlV.css">
+    <script type="module" crossorigin src="./assets/index-CvWeeWTo.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-0QIUcxlV.css">
   </head>
   <body>
     <div id="root">
@@ -52,7 +52,7 @@
       // Register Service Worker
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+          navigator.serviceWorker.register('./sw.js').then(function(registration) {
             console.log('SW registered: ', registration.scope);
           }).catch(function(error) {
             console.log('SW registration failed: ', error);
