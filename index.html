@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0A84FF" />
+    <meta name="background-color" content="#F5F5F7" />
+    <meta name="description" content="ВДГО Мастер — управление работами, кейсы, KPI, диспетчер, прейскурант" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ВДГО Мастер" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ВДГО Мастер" />
+    <meta name="msapplication-TileColor" content="#0A84FF" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icon-512.png" />
+
+    <title>ВДГО Мастер</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js" onerror="var s=document.createElement('script');s.src='./peerjs.min.js';document.head.appendChild(s);"></script>
+    <script type="module" crossorigin src="./assets/index-CAB3CMiS.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B7p6vjuv.css">
+  </head>
+  <body>
+    <div id="root">
+      <div style="padding:40px;font-family:sans-serif;text-align:center;color:#333">
+        <h1>ВДГО Мастер</h1>
+        <p>Загрузка...</p>
+        <noscript>JavaScript должен быть включен</noscript>
+      </div>
+    </div>
+
+    <script>
+      window.__errors = [];
+      window.onerror = function(msg, url, line, col, err) {
+        window.__errors.push(String(msg) + ' at ' + url + ':' + line);
+        document.body.innerHTML = '<div style="padding:40px;font-family:sans-serif"><h2 style="color:red">JS Error</h2><pre style="white-space:pre-wrap">' + window.__errors.join('\n') + '</pre></div>';
+        return true;
+      };
+      window.onunhandledrejection = function(e) {
+        window.__errors.push('Promise: ' + String(e.reason));
+        document.body.innerHTML = '<div style="padding:40px;font-family:sans-serif"><h2 style="color:red">JS Error</h2><pre style="white-space:pre-wrap">' + window.__errors.join('\n') + '</pre></div>';
+      };
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('./sw.js').then(function(registration) {
+            console.log('SW registered: ', registration.scope);
+          }).catch(function(error) {
+            console.log('SW registration failed: ', error);
+          });
+        });
+      }
+
+      // Capture beforeinstallprompt for the React InstallPrompt component
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        window.__deferredInstallPrompt = e;
+      });
+
+      // Listen for appinstalled
+      window.addEventListener('appinstalled', () => {
+        window.__deferredInstallPrompt = null;
+      });
+    </script>
+  </body>
+</html>
