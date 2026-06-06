@@ -1,0 +1,242 @@
+{
+  "template": {
+    "orgName": "Филиал ООО \"Газпром газораспределение Волгоград\" в г. Волгоград",
+    "department": "служба  ВДГО  РЭУ № 3",
+    "docNumber": "5",
+    "periodFrom": "с",
+    "periodTo": "по"
+  },
+  "employees": [
+    {
+      "num": 1,
+      "name": "Анисимов Сергей Александрович",
+      "employeeId": "ГВ00-12075",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 2,
+      "name": "Бастеев Юрий Геннадиевич",
+      "employeeId": "ГВ00-10989",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 3,
+      "name": "Белолипецкий Сергей Егорович",
+      "employeeId": "ГВ00-10990",
+      "position": "Слесарь ЭРГО",
+      "grade": "4  разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 4,
+      "name": "Белоусов Владимир Николаевич",
+      "employeeId": "ГВ00-10991",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 5,
+      "name": "Бочкарев Павел Александрович",
+      "employeeId": "ГВ00-10992",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 6,
+      "name": "Ершов Максим Сергеевич",
+      "employeeId": "ГВ00-10994",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 7,
+      "name": "Китаев Максим Николаевич",
+      "employeeId": "ГВ00-10996",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 8,
+      "name": "Клопов Игорь Геннадиевич",
+      "employeeId": "ГВ00-10997",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 9,
+      "name": "Кувакин Дмитрий Анатольевич",
+      "employeeId": "ГВ00-10998",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряд",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 10,
+      "name": "Липчанский Сергей Викторович",
+      "employeeId": "ГВ00-10999",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 11,
+      "name": "Лукьяненко Павел Александрович",
+      "employeeId": "ГВ00-11044",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 12,
+      "name": "Нерозников Игорь Александрович",
+      "employeeId": "ГВ00-11000",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 13,
+      "name": "Овчинников Дмитрий Геннадьевич",
+      "employeeId": "ГВ00-11001",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 14,
+      "name": "Романенко Юрий Михайлович",
+      "employeeId": "ГВ00-11002",
+      "position": "Слесарь ЭРГО",
+      "grade": "5 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 15,
+      "name": "Севастьянов Владимир Александрович",
+      "employeeId": "ГВ00-11003",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 16,
+      "name": "Соловьев Павел Олегович",
+      "employeeId": "ГВ00-11004",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 17,
+      "name": "Тюрин Михаил Юрьевич",
+      "employeeId": "ГВ00-11006",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 18,
+      "name": "Усов Дмитрий Анатольевич",
+      "employeeId": "ГВ00-11007",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 19,
+      "name": "Шибанов Игорь Александрович",
+      "employeeId": "ГВ00-11008",
+      "position": "Слесарь ЭРГО",
+      "grade": "4 разряда",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 20,
+      "name": "Муленков Максим Денисович",
+      "employeeId": "ГВ00-11010",
+      "position": "Мастер",
+      "grade": "",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 21,
+      "name": "Липчанский Андрей Сергеевич",
+      "employeeId": "ГВ00-11009",
+      "position": "Мастер",
+      "grade": "",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 22,
+      "name": "Пузикова Светлана Геннадьевна",
+      "employeeId": "ГВ00-10987",
+      "position": "Техник",
+      "grade": "",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    },
+    {
+      "num": 23,
+      "name": "Широкова Оксана Геннадьевна",
+      "employeeId": "ГВ00-10988",
+      "position": "Техник",
+      "grade": "",
+      "days": {},
+      "totalDays": null,
+      "totalHours": null
+    }
+  ],
+  "totalCount": 23
+}
