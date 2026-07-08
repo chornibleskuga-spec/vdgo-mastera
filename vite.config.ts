@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
   ],
   server: { port: 3000 },
-  base: './',
+  base: '/vdgo-mastera/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
