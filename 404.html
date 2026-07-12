@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0078D4" />
+    <meta name="background-color" content="#F3F3F3" />
+    <meta name="description" content="ВДГО Мастер — управление работами, кейсы, KPI, диспетчер, прейскурант" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="ВДГО Мастер" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="ВДГО Мастер" />
+    <meta name="msapplication-TileColor" content="#0078D4" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/vdgo-mastera/manifest.json" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" href="/vdgo-mastera/favicon.png" />
+    <link rel="shortcut icon" href="/vdgo-mastera/favicon.ico" />
+    <link rel="apple-touch-icon" href="/vdgo-mastera/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="/vdgo-mastera/icon-512.png" />
+
+    <title>ВДГО Мастер</title>
+    <script type="module" crossorigin src="/vdgo-mastera/assets/index-D7xB66Ia.js"></script>
+    <link rel="stylesheet" crossorigin href="/vdgo-mastera/assets/index-Xcsn98Xo.css">
+  </head>
+  <body>
+    <div id="root">
+      <div style="padding:40px;font-family:sans-serif;text-align:center;color:#333">
+        <h1>ВДГО Мастер</h1>
+        <p>Загрузка...</p>
+        <noscript>JavaScript должен быть включен</noscript>
+      </div>
+    </div>
+    <script>
+      // Error handler — shows JS errors that prevent React from mounting
+      window.addEventListener('error', function(e) {
+        var root = document.getElementById('root');
+        if (root) root.innerHTML = '<pre style="padding:20px;color:#c00;font-family:monospace;font-size:13px;line-height:1.5;background:#fee;border:1px solid #fcc;border-radius:8px;margin:20px;overflow:auto;max-height:80vh">' + '<b>JS Error:</b> ' + e.message + '\n\n<b>File:</b> ' + (e.filename || '') + '\n<b>Line:</b> ' + (e.lineno || '') + ':' + (e.colno || '') + '\n\n<b>Stack:</b>\n' + ((e.error && e.error.stack) || 'N/A') + '</pre>';
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        var root = document.getElementById('root');
+        if (root) root.innerHTML = '<pre style="padding:20px;color:#c00;font-family:monospace;font-size:13px;line-height:1.5;background:#fee;border:1px solid #fcc;border-radius:8px;margin:20px;overflow:auto;max-height:80vh">' + '<b>Unhandled Promise Rejection:</b> ' + e.reason + '\n\n<b>Stack:</b>\n' + ((e.reason && e.reason.stack) || 'N/A') + '</pre>';
+      });
+    </script>
+
+    <script>
+      // Register Service Worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('./sw.js').then(function(registration) {
+            console.log('SW registered: ', registration.scope);
+          }).catch(function(error) {
+            console.log('SW registration failed: ', error);
+          });
+        });
+      }
+
+      // Capture beforeinstallprompt for the React InstallPrompt component
+      window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        window.__deferredInstallPrompt = e;
+      });
+
+      // Listen for appinstalled
+      window.addEventListener('appinstalled', () => {
+        window.__deferredInstallPrompt = null;
+      });
+    </script>
+  </body>
+</html>
