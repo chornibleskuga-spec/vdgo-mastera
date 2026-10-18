@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ВДГО Мастер — macOS-тема: палитра и элементы</title>
+    <!-- Это отдельная страница-образец: она использует тот же macos-theme.css,
+         что и приложение, чтобы можно было оценить палитру и элементы управления
+         отдельно от рабочего интерфейса. -->
+    <link rel="stylesheet" href="./macos-theme.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 32px 28px 64px;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+      h1 { font-size: 22px; font-weight: 600; margin: 0 0 6px; }
+      h2 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary); margin: 34px 0 12px; }
+      p.lead { color: var(--text-secondary); font-size: 13px; margin: 0 0 24px; max-width: 720px; line-height: 1.55; }
+      .wrap { max-width: 900px; margin: 0 auto; }
+      .card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--mac-radius); box-shadow: var(--shadow-card); padding: 18px; }
+      .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+      .sw { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: var(--surface); }
+      .sw .chip { height: 52px; }
+      .sw .meta { padding: 8px 10px; font-size: 11px; line-height: 1.35; }
+      .sw .name { font-weight: 600; }
+      .sw code { color: var(--text-tertiary); font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; }
+      .btn { border: 1px solid var(--border); border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 500; background: var(--surface); color: var(--text-primary); cursor: pointer; }
+      .btn-primary { background: var(--accent); border-color: transparent; color: #fff; }
+      .btn-danger { background: var(--danger); border-color: transparent; color: #fff; }
+      .btn-ghost { background: transparent; }
+      input[type='text'], select { border: 1px solid var(--input-border); background: var(--input-bg); color: var(--text-primary); border-radius: 6px; padding: 6px 10px; font-size: 13px; outline: none; }
+      .seg { display: inline-flex; background: var(--surface-hover); border-radius: 7px; padding: 2px; gap: 2px; }
+      .seg button { border: 0; background: transparent; color: var(--text-secondary); font-size: 13px; padding: 4px 12px; border-radius: 5px; cursor: pointer; }
+      .seg button.on { background: var(--surface); color: var(--text-primary); box-shadow: var(--shadow-card); }
+      .pill { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 999px; }
+      .bar { display: flex; align-items: center; gap: 10px; height: 46px; padding: 0 12px; border-radius: 8px; border: 1px solid var(--mac-hairline); }
+      .lights { display: flex; gap: 8px; }
+      .light { width: 12px; height: 12px; border-radius: 50%; box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.18); }
+      .menu { display: inline-block; background: var(--mac-popover-bg); backdrop-filter: blur(30px) saturate(180%); border: 1px solid var(--mac-hairline); border-radius: var(--mac-radius); box-shadow: var(--shadow-floating); padding: 4px; min-width: 190px; }
+      .menu button { display: block; width: 100%; text-align: left; border: 0; background: transparent; color: var(--text-primary); font-size: 13px; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+      .menu button:hover { background: var(--surface-hover); }
+      .list { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--surface); }
+      .list div { padding: 10px 12px; font-size: 13px; border-bottom: 1px solid var(--border-subtle); }
+      .list div:last-child { border-bottom: 0; }
+      .aside { font-size: 12px; color: var(--text-tertiary); line-height: 1.5; }
+      .toggle { float: right; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <button class="btn toggle" id="themeBtn">Тёмная тема</button>
+      <h1>macOS-тема — палитра и элементы</h1>
+      <p class="lead">
+        Страница-образец использует тот же <code>macos-theme.css</code>, что и приложение. Здесь видно палитру и
+        элементы управления; в самом приложении эти же токены применяются к его собственной вёрстке.
+      </p>
+
+      <h2>Акцент и состояния</h2>
+      <div class="grid">
+        <div class="sw"><div class="chip" style="background: var(--accent)"></div><div class="meta"><div class="name">Accent</div><code>--accent</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--success)"></div><div class="meta"><div class="name">Success</div><code>--success</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--warning)"></div><div class="meta"><div class="name">Warning</div><code>--warning</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--danger)"></div><div class="meta"><div class="name">Danger</div><code>--danger</code></div></div>
+      </div>
+
+      <h2>Поверхности</h2>
+      <div class="grid">
+        <div class="sw"><div class="chip" style="background: var(--bg-primary)"></div><div class="meta"><div class="name">Окно</div><code>--bg-primary</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--bg-secondary)"></div><div class="meta"><div class="name">Панель / карточка</div><code>--bg-secondary</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--surface)"></div><div class="meta"><div class="name">Поверхность</div><code>--surface</code></div></div>
+        <div class="sw"><div class="chip" style="background: var(--bg-tertiary)"></div><div class="meta"><div class="name">Третичный фон</div><code>--bg-tertiary</code></div></div>
+      </div>
+
+      <h2>Текст</h2>
+      <div class="card">
+        <div style="color: var(--text-primary); font-size: 15px; font-weight: 600">Основной текст — 15/600</div>
+        <div style="color: var(--text-secondary); font-size: 13px; margin-top: 4px">Вторичный текст — 13/400, им подписаны значения</div>
+        <div style="color: var(--text-tertiary); font-size: 11px; margin-top: 4px">Третичный текст — 11/400, подсказки и служебные подписи</div>
+      </div>
+
+      <h2>Кнопки</h2>
+      <div class="card row">
+        <button class="btn btn-primary">Сохранить</button>
+        <button class="btn">Отмена</button>
+        <button class="btn btn-ghost">Подробнее</button>
+        <button class="btn btn-danger">Удалить</button>
+      </div>
+
+      <h2>Поля ввода и сегменты</h2>
+      <div class="card row">
+        <input type="text" placeholder="Лицевой счёт" />
+        <select><option>ТЗР — Тракторозаводский</option><option>КРО — Краснооктябрьский</option></select>
+        <span class="seg"><button class="on">ТЗР</button><button>КРО</button></span>
+      </div>
+
+      <h2>Значки состояния</h2>
+      <div class="card row">
+        <span class="pill" style="background: var(--badge-blue); color: var(--accent)">в работе</span>
+        <span class="pill" style="background: var(--badge-green); color: var(--success)">выполнено</span>
+        <span class="pill" style="background: var(--badge-orange); color: var(--warning)">ожидание</span>
+        <span class="pill" style="background: var(--badge-red); color: var(--danger)">отказ</span>
+        <span class="pill" style="background: var(--badge-purple); color: #af52de">проверка</span>
+      </div>
+
+      <h2>Панель инструментов и поповер</h2>
+      <div class="card">
+        <div class="bar" style="background: var(--mac-toolbar-bg); backdrop-filter: blur(24px) saturate(180%)">
+          <span class="lights"><span class="light" style="background: #ff5f57"></span><span class="light" style="background: #febc2e"></span><span class="light" style="background: #28c840"></span></span>
+          <span style="font-size: 13px; font-weight: 500">Работа</span>
+          <span style="font-size: 13px; font-weight: 600; color: var(--accent); background: var(--sidebar-active-bg); padding: 4px 10px; border-radius: 6px">KPI планшет</span>
+          <span style="font-size: 13px; color: var(--sidebar-text)">Диспетчер</span>
+          <span style="flex: 1"></span>
+          <span class="aside">Алексей М.</span>
+        </div>
+        <div style="margin-top: 18px" class="row">
+          <div class="menu">
+            <button>История кейсов</button>
+            <button style="color: var(--accent)">История KPI</button>
+            <button>История обзвона</button>
+          </div>
+          <div class="list" style="flex: 1; min-width: 240px">
+            <div>ЛС 400013 · ТЗР, ул. Ленина 5</div>
+            <div>ЛС 400127 · КРО, ул. Мира 18, кв. 42</div>
+            <div>ЛС 400056 · ТЗР, ул. Гагарина 3</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Прозрачность и размытие</h2>
+      <p class="aside" style="max-width: 720px">
+        Панель инструментов, поповеры и полоса заголовка используют <code>backdrop-filter: blur()</code> —
+        «вибрацию» macOS. В браузере без поддержки <code>backdrop-filter</code> фон остаётся сплошным, читаемость
+        не страдает.
+      </p>
+
+      <h2>Иконка приложения</h2>
+      <div class="card">
+        <div class="row" style="align-items: flex-end; gap: 22px">
+          <div style="text-align: center">
+            <img src="./icon-macos-256.png" width="128" height="128" alt="Иконка в стиле macOS" />
+            <div class="aside" style="margin-top: 6px">Dock, 128</div>
+          </div>
+          <div style="text-align: center">
+            <img src="./icon-192.png" width="90" height="90" alt="Иконка приложения" style="border-radius: 20px" />
+            <div class="aside" style="margin-top: 6px">Домашний экран, 90</div>
+          </div>
+          <div style="text-align: center">
+            <img src="./icon-192.png" width="56" height="56" alt="Иконка приложения" style="border-radius: 13px" />
+            <div class="aside" style="margin-top: 6px">Плитка, 56</div>
+          </div>
+          <div style="text-align: center">
+            <img src="./favicon.png" width="32" height="32" alt="Значок вкладки" style="border-radius: 7px" />
+            <div class="aside" style="margin-top: 6px">Вкладка, 32</div>
+          </div>
+          <div style="text-align: center">
+            <img src="./icon-maskable-192.png" width="72" height="72" alt="Maskable" style="border-radius: 50%" />
+            <div class="aside" style="margin-top: 6px">Маска, круг</div>
+          </div>
+        </div>
+        <p class="aside" style="margin: 16px 0 0">
+          Форма — «сквиркл» (суперэллипс), как у иконок Apple; градиент системного синего, мягкая тень вниз
+          и стеклянный экран планшета в белом корпусе. Для домашнего экрана Android используется maskable-версия:
+          у неё глиф меньше, поэтому иконка не обрезается ни круглой, ни квадратной маской.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var btn = document.getElementById('themeBtn');
+      var html = document.documentElement;
+      function label() {
+        btn.textContent = html.getAttribute('data-theme') === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+      }
+      btn.addEventListener('click', function () {
+        var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', next);
+        try { localStorage.setItem('vdgo_theme', next); } catch (e) {}
+        label();
+      });
+      try {
+        var saved = localStorage.getItem('vdgo_theme');
+        if (saved === 'dark' || saved === 'light') html.setAttribute('data-theme', saved);
+      } catch (e) {}
+      label();
+    </script>
+  </body>
+</html>
